@@ -8,8 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
-
 public class MyFirstTest {
 
     private WebDriver driver;
@@ -23,10 +21,10 @@ public class MyFirstTest {
 
     @Test
     public void myFirstTest() {
-        driver.get("https://www.google.ru");
-        driver.findElement(By.name("q")).sendKeys("webdriver");
-        driver .findElement(By.className("iblpc")).click();
-        wait.until(titleIs("Google"));
+        driver.get(" http://localhost/litecart/admin/.");
+        driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys("admin");
+        driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("admin");
+        driver .findElement(By.xpath("//button[@value=\"Login\"]")).click();
     }
 
     @After
