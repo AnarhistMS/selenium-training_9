@@ -85,8 +85,9 @@ public class MyFirstTest {
             List<String> geoZonesNames = new ArrayList<>();
             List<WebElement> geoZones = driver.findElements(By.xpath("//select[not(contains(@aria-hidden,'true'))]"));
             for (int j = 0; j < geoZones.size(); j++) {
-                List<WebElement> updatedGeoZones = driver.findElements(By.xpath("//select[not(contains(@aria-hidden,'true'))]"));
+                List<WebElement> updatedGeoZones = driver.findElements(By.xpath("//select[not(contains(@aria-hidden,'true'))]/option[@selected='selected']"));
                 geoZonesNames.add(updatedGeoZones.get(j).getAttribute("textContent"));
+                System.out.println(updatedGeoZones.get(j).getAttribute("textContent"));
             }
             // Проверяем сортировку геозон и возвращаемся к списку стран
             List<String> sortedZonesNames = new ArrayList<>(geoZonesNames);
